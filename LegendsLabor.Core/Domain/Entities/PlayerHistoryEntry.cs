@@ -12,7 +12,7 @@ namespace LegendsLabor.Core.Domain.Entities
 
         [BsonElement("playerId")]
         //Foreign key to the Player definition in SQL.")]
-        public int PlayerId { get; set; } // FK to Player definition in SQL
+        public string PlayerId { get; set; } = string.Empty; // FK to Player definition in SQL
 
         [BsonElement("actionType")]
         [BsonRequired]

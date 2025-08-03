@@ -8,11 +8,11 @@ namespace LegendsLabor.Core.Domain.Entities
     {
         [Key]
         [Comment("Primary key for the Guild entity.")]
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         [ForeignKey("Id")]
         [Comment("Foreign key to the Player who owns the guild.")]
-        public int PlayerId { get; set; }
+        public Guid PlayerId { get; set; }
 
         [Comment("Navigation property to the Player who owns the guild.")]
         public Player Owner { get; set; } = null!;

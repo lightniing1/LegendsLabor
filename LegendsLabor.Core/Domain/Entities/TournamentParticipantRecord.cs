@@ -13,11 +13,11 @@ namespace LegendsLabor.Core.Domain.Entities
 
         [BsonElement("tournamentId")]
         //Foreign key to the Tournament definition in SQL.")]
-        public int TournamentId { get; set; } // FK to Tournament definition in SQL
+        public string TournamentId { get; set; } = string.Empty; // FK to Tournament definition in SQL
 
         [BsonElement("playerId")]
         //Foreign key to the Player definition in SQL.")]
-        public int PlayerId { get; set; } // FK to Player definition in SQL
+        public string PlayerId { get; set; } = string.Empty; // FK to Player definition in SQL
 
         [BsonElement("points")]
         //The points accumulated by the player in the tournament.")]

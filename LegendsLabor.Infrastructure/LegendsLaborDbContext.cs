@@ -38,16 +38,14 @@ namespace LegendsLabor.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            // Friendship: PlayerA
+            // Configure the relationship for PlayerA
             modelBuilder.Entity<Friendship>()
                 .HasOne(f => f.PlayerA)
                 .WithMany(p => p.ChallengedFriendships)
                 .HasForeignKey(f => f.PlayerIdA)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Friendship: PlayerB
+            // Configure the relationship for PlayerB
             modelBuilder.Entity<Friendship>()
                 .HasOne(f => f.PlayerB)
                 .WithMany(p => p.ChallengerFriendships)

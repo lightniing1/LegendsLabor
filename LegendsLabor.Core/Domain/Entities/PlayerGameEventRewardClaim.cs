@@ -13,11 +13,11 @@ namespace LegendsLabor.Core.Domain.Entities
 
         [BsonElement("playerGameEventParticipationId")]
         //Foreign key to the PlayerGameEventParticipation instance in MongoDB.
-        public string PlayerGameEventParticipationId { get; set; } // FK to PlayerGameEventParticipation in Mongo
+        public string PlayerGameEventParticipationId { get; set; } = string.Empty; // FK to PlayerGameEventParticipation in Mongo
 
         [BsonElement("gameEventRewardId")]
         //Foreign key to the specific GameEventReward definition in SQL.
-        public int GameEventRewardId { get; set; } // FK to GameEventReward definition in SQL
+        public string GameEventRewardId { get; set; } = string.Empty; // FK to GameEventReward definition in SQL
 
         [BsonElement("claimedAt")]
         //The date and time when the reward was claimed.

@@ -8,7 +8,7 @@ namespace LegendsLabor.Core.Domain.Entities
     {
         [Key]
         [Comment("Primary key for the Tournament entity.")]
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         [Required]
         [MaxLength(100)]

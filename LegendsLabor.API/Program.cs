@@ -1,6 +1,7 @@
+using LegendsLabor.Core.Repository.Interfaces;
+using LegendsLabor.Core.Services;
 using LegendsLabor.Infrastructure;
 using LegendsLabor.Infrastructure.Repository;
-using LegendsLabor.Infrastructure.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.API
@@ -16,8 +17,12 @@ namespace LegendsLabor.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //Repositories
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+
+            //Services
+            builder.Services.AddScoped<UserService>();
 
             builder.Services.AddDbContext<LegendsLaborDbContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres")));
@@ -29,6 +34,12 @@ namespace LegendsLabor.API
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+
+                using (var scope = app.Services.CreateScope())
+                {
+                    var dbContext = scope.ServiceProvider.GetRequiredService<LegendsLaborDbContext>();
+                    dbContext.Database.Migrate();
+                }
             }
 
             app.UseHttpsRedirection();

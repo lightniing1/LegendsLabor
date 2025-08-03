@@ -59,7 +59,7 @@ namespace LegendsLabor.Core.Domain.Entities
         [Comment("cooldown period in minutes before this training activity can be attempted again.")]
         public int CooldownMinutes { get; set; }
 
-        [Comment("The tier of the training activity")].
+        [Comment("The tier of the training activity")]
         public int Tier { get; set; } = 1;
 
         [Column(TypeName = "decimal(5,2)")]

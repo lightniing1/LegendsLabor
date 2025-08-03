@@ -22,11 +22,11 @@ namespace LegendsLabor.Core.Domain.Entities
 
         [BsonElement("player1Id")]
         // The ID of the first player (initiating/challenging).
-        public int Player1Id { get; set; }
+        public string Player1Id { get; set; } = string.Empty;
 
         [BsonElement("player2Id")]
         // The ID of the second player (for PvP) or a placeholder for PvE.
-        public int Player2Id { get; set; } // For PvP, ID of the challenged player
+        public string Player2Id { get; set; } = string.Empty; // For PvP, ID of the challenged player
 
         [BsonElement("monsterOrQuestId")]
         // The ID of the monster or quest encounter definition for PvE. Nullable for PvP.

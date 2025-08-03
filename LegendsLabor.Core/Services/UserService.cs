@@ -1,5 +1,5 @@
 ﻿using LegendsLabor.Core.Domain.Entities;
-using LegendsLabor.Infrastructure.Repository.Interfaces;
+using LegendsLabor.Core.Repository.Interfaces;
 
 namespace LegendsLabor.Core.Services
 {

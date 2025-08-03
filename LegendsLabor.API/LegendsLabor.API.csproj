@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LegendsLabor.Infrastructure\LegendsLabor.Infrastructure.csproj" />
+    <ProjectReference Include="..\LegendsLabor.Core\LegendsLabor.Core.csproj" />
   </ItemGroup>
 
 </Project>

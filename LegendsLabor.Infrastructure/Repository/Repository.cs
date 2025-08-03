@@ -1,14 +1,14 @@
-using LegendsLabor.Infrastructure.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using LegendsLabor.Core.Repository.Interfaces;
 
 namespace LegendsLabor.Infrastructure.Repository;
 
 public class Repository<T> : IRepository<T> where T : class
 {
-    protected readonly DbContext _context;
+    protected readonly LegendsLaborDbContext _context;
     protected readonly DbSet<T> _dbSet;
 
-    public Repository(DbContext context)
+    public Repository(LegendsLaborDbContext context)
     {
         _context = context;
         _dbSet = context.Set<T>();

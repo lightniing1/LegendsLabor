@@ -12,11 +12,11 @@ namespace LegendsLabor.Core.Domain.Entities
 
         [BsonElement("gameEventId")]
         //Foreign key to the GameEvent definition in SQL.
-        public int GameEventId { get; set; } // FK to GameEvent definition in SQL
+        public string GameEventId { get; set; } = string.Empty; // FK to GameEvent definition in SQL
 
         [BsonElement("playerId")]
         //Foreign key to the Player definition in SQL.
-        public int PlayerId { get; set; } // FK to Player definition in SQL
+        public string PlayerId { get; set; } = string.Empty; // FK to Player definition in SQL
 
         [BsonElement("joinedAt")]
         //The date and time when the player joined the event.

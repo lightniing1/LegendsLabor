@@ -8,11 +8,11 @@ namespace LegendsLabor.Core.Domain.Entities
     {
         [Key]
         [Comment("Primary key for the Player entity.")]
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         [ForeignKey("Id")]
         [Comment("Foreign key to the User entity.")]
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
 
         [Comment("Navigation property to the User entity.")]
         public User User { get; set; } = null!; // Navigation property

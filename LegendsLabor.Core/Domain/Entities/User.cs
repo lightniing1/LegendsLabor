@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class User : AuditableEntity
+    public class User : AuditableEntity, IEntity<Guid>
     {
         [Key]
         [Comment("Primary key for the User entity.")]

@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace LegendsLabor.Core.Domain.Entities
 {
     // Represents a historical transaction record (Gold movement)
-    public class Transaction : AuditableEntity
+    public class Transaction : AuditableEntity, IEntity<string>
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

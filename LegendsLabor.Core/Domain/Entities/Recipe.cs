@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class Recipe : AuditableEntity
+    public class Recipe : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("Primary key for the Recipe entity.")]

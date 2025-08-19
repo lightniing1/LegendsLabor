@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class TournamentRewardItem : AuditableEntity
+    public class TournamentRewardItem : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("Primary key for the TournamentRewardItem entity.")]

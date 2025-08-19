@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class GuildMember : AuditableEntity
+    public class GuildMember : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("Primary key for the GuildMember entity.")]

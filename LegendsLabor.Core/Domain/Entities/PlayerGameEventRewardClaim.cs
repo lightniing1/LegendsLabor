@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace LegendsLabor.Core.Domain.Entities
 {
     // Represents a specific reward claimed by a player from a Game Event they participated in
-    public class PlayerGameEventRewardClaim : AuditableEntity
+    public class PlayerGameEventRewardClaim : AuditableEntity, IEntity<string>
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

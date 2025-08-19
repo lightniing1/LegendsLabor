@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class PlayerWorkSession : AuditableEntity
+    public class PlayerWorkSession : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("The unique identifier for the player work session.")]

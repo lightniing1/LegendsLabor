@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class SkillEffect : AuditableEntity
+    public class SkillEffect : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("Primary key for the SkillEffect entity.")]

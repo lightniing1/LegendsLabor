@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class PlayerStatModifier : AuditableEntity // Tracks temporary or gear-based stat boosts
+    public class PlayerStatModifier : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("Primary key for the PlayerStatModifier entity.")]

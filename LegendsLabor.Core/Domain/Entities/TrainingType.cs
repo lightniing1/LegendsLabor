@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class TrainingType : AuditableEntity
+    public class TrainingType : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("Primary key for the TrainingType entity.")]

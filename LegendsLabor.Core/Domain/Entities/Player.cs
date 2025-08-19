@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class Player : AuditableEntity
+    public class Player : AuditableEntity, IEntity<Guid>
     {
         [Key]
         [Comment("Primary key for the Player entity.")]

@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace LegendsLabor.Core.Domain.Entities
 {
     // Represents a player's participation and stats within a specific Tournament
-    public class TournamentParticipantRecord : AuditableEntity
+    public class TournamentParticipantRecord : AuditableEntity, IEntity<string>
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

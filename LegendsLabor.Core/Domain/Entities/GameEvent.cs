@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class GameEvent : AuditableEntity
+    public class GameEvent : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("Primary key for the GameEvent entity")]

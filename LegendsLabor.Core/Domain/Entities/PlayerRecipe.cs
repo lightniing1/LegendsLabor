@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class PlayerRecipe : AuditableEntity // Tracks a player's discovery of a Recipe
+    public class PlayerRecipe : AuditableEntity, IEntity<int>
     {
         [Key]
         [Comment("Primary key for the PlayerRecipe entity.")]

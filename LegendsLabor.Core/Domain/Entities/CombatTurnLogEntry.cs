@@ -3,10 +3,10 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class CombatTurnLogEntry : AuditableEntity
+    public class CombatTurnLogEntry : AuditableEntity, IEntity<int>
     {
         [BsonElement("turnId")]
-        public int TurnId { get; set; }
+        public int Id { get; set; }
 
         [BsonElement("playerId")]
         public int PlayerId { get; set; }

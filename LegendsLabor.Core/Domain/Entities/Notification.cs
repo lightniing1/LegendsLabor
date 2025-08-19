@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class Notification : AuditableEntity
+    public class Notification : AuditableEntity, IEntity<string>
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

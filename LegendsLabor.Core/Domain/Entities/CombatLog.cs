@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class CombatLog : AuditableEntity
+    public class CombatLog : AuditableEntity, IEntity<string>
     {
         [BsonId] // MongoDB's primary key
         [BsonRepresentation(BsonType.ObjectId)] // Typically ObjectId for Mongo

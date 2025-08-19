@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace LegendsLabor.Core.Domain.Entities
 {
-    public class PlayerHistoryEntry : AuditableEntity
+    public class PlayerHistoryEntry : AuditableEntity, IEntity<string>
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

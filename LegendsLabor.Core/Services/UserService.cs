@@ -8,7 +8,6 @@ namespace LegendsLabor.Core.Services
     {
         public UserService(IRepository<User> userRepository) : base(userRepository)
         {
-
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using LegendsLabor.Core.Domain.Entities;
+using LegendsLabor.Core.Models;
 using LegendsLabor.Core.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LegendsLabor.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]", Name = "User")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -18,38 +19,30 @@ namespace LegendsLabor.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> CreateUser(User newUser) // Using a DTO here is recommended
+        public async Task<ActionResult> CreateUser(User newUser)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var createdUser = await _userService.CreateAsync(newUser);
-            return Created($"/api/users/{createdUser.Id}", createdUser);
+            var result = await _userService.CreateAsync(newUser);
+            if (!result.IsSuccess)
+                return BadRequest(result.Error);
+            return Created($"/api/users/{result.Value?.Id}", result.Value);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(User userToUpdate) // Use a DTO here
+        public async Task<IActionResult> UpdateUser(User userToUpdate)
         {
-            try
-            {
-                await _userService.UpdateAsync(userToUpdate);
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-
+            var result = await _userService.UpdateAsync(userToUpdate);
+            if (!result.IsSuccess)
+                return NotFound(result.Error);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(Guid id)
         {
-            await _userService.DeleteAsync(id);
+            var result = await _userService.DeleteAsync(id);
+            if (!result.IsSuccess)
+                return NotFound(result.Error);
             return NoContent();
         }
-
     }
 }
